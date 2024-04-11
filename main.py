@@ -112,7 +112,8 @@ for i in llaves:
 print("----------------")
 print(path)
 
-print(path["B"],path["A"], path["E"], path["H"])
+
+print("B:",path["B"],"A:",path["A"], "E:",path["E"], "H:",path["H"])
 
 
 

@@ -40,30 +40,3 @@ def printDicc(dicc):
             print(F'\tDestino: {j} \n\t\tPeso: {dicc[i][j]}')
     return ''
 
-def dijkstra(grafo, inicio):
-  distancias = {vertice: float('infinity') for vertice in grafo}
-  distancias[inicio] = 0
-
-  vertices_no_visitados = list(grafo.keys())
-
-  while vertices_no_visitados:
-    vertice_actual = min(
-      [(distancias[vertice], vertice) for vertice in vertices_no_visitados], key=lambda x: x[0]
-    )[1]
-
-    if distancias[vertice_actual] == float('infinity'):
-      break
-
-    for vecino, peso in grafo[vertice_actual].items():
-      distancia_alternativa = distancias[vertice_actual] + peso
-      if distancia_alternativa < distancias[vecino]:
-        distancias[vecino] = distancia_alternativa
-
-    vertices_no_visitados.remove(vertice_actual)
-
-  return distancias
-
-# Usar la función dijkstra para obtener las distancias más cortas desde el vértice de inicio
-
-
-# Eliminar los elementos que no sean del camino más corto
