@@ -1,4 +1,4 @@
-from .functions import *
+
 
 class grafo():
     def __init__(self) -> None:
@@ -18,6 +18,12 @@ class grafo():
         pass
     
     def __str__(self) -> str:
-        return printDicc(self.Aristas)
+        return self.printDicc(self.Aristas)
         
     pass
+    def printDicc(self,dicc):
+        for i in dicc:
+            print(f'Vertice: {i}')
+            for j in dicc[i]:
+                print(F'\tDestino: {j} \n\t\tPeso: {dicc[i][j]}')
+        return ''
